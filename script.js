@@ -18,7 +18,8 @@ $(document).ready(function(){
 		changeColor($(this));
 	});
 
-	$('#clear').click(function(){
+	$('#clear').click(function(e){
+		e.preventDefault();
 		pixels = promptPixels();
 		initializeGrid(pixels);
 	});
@@ -27,6 +28,8 @@ $(document).ready(function(){
 
 function initializeGrid(pixels){
 	clearGrid();
+	pixels = checkPixelQty(pixels);
+	
 	var width = gridWidth();
 	var args = {'gridWidth': width, 'pixels': pixels};
 	args['pixelSize'] = calculatePixelSize(args);
@@ -52,8 +55,6 @@ function drawGrid(args){
 	var pixelSize = args['pixelSize'];
 	var pixel = '<div class="pixel" style="width: ' + pixelSize + 'px; height: ' + pixelSize + 'px"></div>';
 
-	pixels = checkPixelQty(pixels);
-
 	for (i = 0; i < pixels * pixels; i++) {
 		$('#grid').append(pixel).fadeTo('fast', 1);
 	}
@@ -70,7 +71,7 @@ function clearGrid(){
 }
 
 function promptPixels(){
-	pixels = prompt('How many pixels ya want?', 16);
+	pixels = parseInt(prompt('How many pixels ya want? (You can have any amount, between 1 and 100!)', 16));
 	return pixels;
 }
 
