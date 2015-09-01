@@ -1,7 +1,18 @@
-/* Button */
+h3 {
+    font-family: sans-serif;
+    font-weight: 200;
+    text-align: center;
+    width: 50%;
+    min-width: 300px;
+    display: block;
+    margin: 10px auto;
+}
+
 body {
 	text-align: center;
 }
+
+/* Button */
 
 #clear {
 	font-family: sans-serif;
@@ -40,6 +51,10 @@ body {
 	background-color: cadetblue;
 	display: flex;
 	float:left;
-	-webkit-transition: background-color .15s;
-    transition: background-color .15s;
+	/*-webkit-transition: background-color .15s;
+    transition: background-color .15s;*/
+}
+
+.active {
+	background-color: salmon;
 }
