@@ -14,7 +14,15 @@ $(document).ready(function(){
 	var pixels = 16; // initial pixel density
 	initializeGrid(pixels);
 
-	// $(document).on('mouseenter', '.pixel', changeColor());
+	$(document).on('mouseenter', '.pixel', function(){
+		changeColor($(this));
+	});
+
+	$('#clear').click(function(){
+		pixels = promptPixels();
+		initializeGrid(pixels);
+	});
+
 });
 
 function initializeGrid(pixels){
@@ -42,7 +50,7 @@ function drawGrid(args){
 	var pixels = args['pixels'];
 	var width = args['gridWidth'];
 	var pixelSize = args['pixelSize'];
-	var pixel = '<div class="pixel" style="width: ' + pixelSize + 'px; height: ' + (pixelSize - 3) + 'px"></div>';
+	var pixel = '<div class="pixel" style="width: ' + pixelSize + 'px; height: ' + pixelSize + 'px"></div>';
 
 	for (i = 0; i < pixels * pixels; i++) {
 		$('#grid').append(pixel).fadeTo('fast', 1);
@@ -54,11 +62,13 @@ function clearGrid(){
 }
 
 function promptPixels(){
-
+	pixels = prompt('How many pixels ya want?', 16);
+	return pixels;
 }
 
-function changeColor(){
-
+function changeColor(self){
+	 $this = self;
+	 $this.css('background-color', 'salmon');
 }
 
 

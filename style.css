@@ -5,10 +5,8 @@
 
 /* Grid */
 #grid {
-	max-width: 960px;
-	min-width: 290px;
+	max-width: 800px;
 	width: 100%;
-	background-color: #666;
 	display: block;
 	margin: 10px auto;
 	font-size: 0;
@@ -20,4 +18,8 @@
 	margin: 1px;
 	display: inline-block;
 	background-color: cadetblue;
+	display: flex;
+	float:left;
+	-webkit-transition: background-color .15s;
+    transition: background-color .15s;
 }
