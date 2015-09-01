@@ -1,6 +1,26 @@
 /* Button */
+body {
+	text-align: center;
+}
+
 #clear {
-	align: center;
+	font-family: sans-serif;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 200;
+	text-decoration: none;
+	padding: 10px 50px;
+	background-color: salmon;
+	border-radius: 10px;
+	margin: 10px;	
+	display: inline-block;
+	border: 2px solid white;
+}
+
+#clear:hover {
+	background-color: #fff;
+	color: salmon;
+	border: 2px solid salmon;
 }
 
 /* Grid */

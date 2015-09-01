@@ -52,9 +52,17 @@ function drawGrid(args){
 	var pixelSize = args['pixelSize'];
 	var pixel = '<div class="pixel" style="width: ' + pixelSize + 'px; height: ' + pixelSize + 'px"></div>';
 
+	pixels = checkPixelQty(pixels);
+
 	for (i = 0; i < pixels * pixels; i++) {
 		$('#grid').append(pixel).fadeTo('fast', 1);
 	}
+}
+
+function checkPixelQty(pixels){
+	if (pixels < 1 || pixels === 0) {pixels = 1;}
+	if (pixels > 100) {pixels = 100;}
+	return pixels;
 }
 
 function clearGrid(){
