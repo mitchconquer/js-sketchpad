@@ -1,0 +1,21 @@
+/* Button */
+#clear {
+	align: center;
+}
+
+/* Grid */
+#grid {
+	max-width: 960px;
+	min-width: 290px;
+	width: 100%;
+	background-color: #666;
+	display: block;
+	margin: 10px auto;
+}
+
+/* Pixels */
+
+.pixel {
+	margin: 1px;
+	display: inline-block;
+}
